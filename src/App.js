@@ -2,8 +2,9 @@ import React from "react";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import "./App.css";
-import Profile from "./Profile";
-import Logo from "./Logo";
+import Profile from "./components/Profile";
+import Logo from "./components/Logo";
+import PhotoOfTheDay from "./components/PhotoOfTheDay";
 
 function App() {
   const [data, setData] = useState(null);
@@ -21,6 +22,7 @@ function App() {
     <div className="App">
       <Profile />
       <Logo />
+      <PhotoOfTheDay data={data}/>
     </div>
   );
 }

@@ -1,11 +1,13 @@
 import React from "react";
+import Menu from "./Menu";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser } from "@fortawesome/free-solid-svg-icons";
 
 function Profile() {
-    const showMenu = () => {
-       const dropDown =  document.querySelector(".profile");
-       dropDown.classList.toggle("dropdown");
+
+    const toggleMenu = () => {
+       const menu = <Menu />
+       menu.classList.toggle("toggle-menu");
     }
 
     const isLoggedIn = false;
@@ -15,14 +17,14 @@ function Profile() {
             <p class="sign-up">{isLoggedIn ? `${userName}` : "Sign Up"}</p>
             {isLoggedIn
                 ?
-                <img src={require("./assets/me.png")} alt="a user profile icon" className="profile" 
-                    onClick={("click", (e) => {
-                        console.log(e);
+                <img src={require("../assets/me.png")} alt="a user profile icon" className="profile" 
+                    onClick={("click", () => {
+                        toggleMenu();
                     })}/>
                 :
                 <FontAwesomeIcon icon={faUser} 
-                    onClick={("click", (e) => {
-                        console.log(e);
+                    onClick={("click", () => {
+                        toggleMenu();
                 })}/>
             }
         </div>
