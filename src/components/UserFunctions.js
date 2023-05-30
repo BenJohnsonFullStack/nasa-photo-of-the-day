@@ -8,22 +8,15 @@ import { faHeart as faSolidHeart } from "@fortawesome/free-solid-svg-icons";
 
 function UserFunctions() {
     const [numberOfLikes, setNumberOfLikes] = useState(328);
-    const [likeIcon, setLikeIcon] = useState(<FontAwesomeIcon icon={faHeart} />)
+    const [liked, setLiked] = useState(false)
 
     const updateLikes = () => {
-        function isLiked() {
-            if (likeIcon === <FontAwesomeIcon icon={faHeart} />) {
-                return false
-            } else if (likeIcon === <FontAwesomeIcon icon={faSolidHeart} />){
-                return true
-            }
-        }
-            if (isLiked()) {
+            if (liked) {
                 setNumberOfLikes(numberOfLikes - 1)
-                setLikeIcon(<FontAwesomeIcon icon={faHeart} />) 
+                setLiked(false)
             } else {
                 setNumberOfLikes(numberOfLikes + 1)
-                setLikeIcon(<FontAwesomeIcon icon={faSolidHeart} />)
+                setLiked(true)
             }
         }
 
@@ -31,10 +24,10 @@ function UserFunctions() {
         <div className="social">
             <p className="likes">{numberOfLikes} likes</p>
             <p className="heart icons" 
-                onClick={("click", () => {
+                onClick={() => {
                     updateLikes()
-                })}>
-                    {likeIcon}
+                }}>
+                    {liked ? <FontAwesomeIcon icon={faSolidHeart} /> : <FontAwesomeIcon icon={faHeart} />}
             </p>
             <p className="icons"><FontAwesomeIcon icon={faComment} /></p>
             <p className="icons"><FontAwesomeIcon icon={faArrowUpRightFromSquare} /></p>
