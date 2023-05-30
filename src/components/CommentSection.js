@@ -23,7 +23,7 @@ function CommentSection() {
     return(
         <div className="comment-container">
             <h4>Comments</h4>
-            <UserComments key={userComment.id} />
+            <UserComments />
         </div>
     )
 }

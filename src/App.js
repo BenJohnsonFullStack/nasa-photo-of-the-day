@@ -20,8 +20,8 @@ function App() {
 
   return (
     <div className="App">
-      <Profile />
-      <Logo />
+      {/* <Profile />
+      <Logo /> */}
       <PhotoOfTheDay data={data}/>
     </div>
   );

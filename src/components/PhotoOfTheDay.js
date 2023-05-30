@@ -11,7 +11,7 @@ function PhotoOfTheDay(props) {
                     <p className="title">{data.title}</p>
                     <p className="copyright">{data.copyright !== null ? `Copyright: ${data.copyright}` : ""}</p>
                 </div>
-                <UserFunctions />
+                {/* <UserFunctions /> */}
             </div>
             <p className="description">{data.explanation}</p>
         </div>
