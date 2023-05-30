@@ -17,7 +17,7 @@ function Profile() {
             <p class="sign-up">{isLoggedIn ? `${userName}` : "Sign Up"}</p>
             {isLoggedIn
                 ?
-                <img src={require("../assets/me.png")} alt="a user profile icon" className="profile" 
+                <img src={require("../assets/me.png")} alt="a user profile icon" className="profile-pic" 
                     onClick={("click", () => {
                         toggleMenu();
                     })}/>
