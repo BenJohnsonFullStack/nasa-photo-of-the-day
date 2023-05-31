@@ -6,6 +6,7 @@ import Profile from "./components/Profile";
 import Logo from "./components/Logo";
 import PhotoOfTheDay from "./components/PhotoOfTheDay";
 
+
 function App() {
   const [data, setData] = useState(null);
 
